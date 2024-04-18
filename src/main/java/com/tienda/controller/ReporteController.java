@@ -2,6 +2,7 @@ package com.tienda.controller;
 
 import com.tienda.service.ReporteService;
 import java.io.IOException;
+import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
@@ -26,5 +27,15 @@ public class ReporteController {
     @GetMapping("/usuarios")
     public ResponseEntity<Resource> usuarios(@RequestParam String tipo) throws IOException {
         return reporteService.generaReporte("usuarios", null, tipo);
+    }
+    
+    @GetMapping("/ventas")
+    public ResponseEntity<Resource> ventas(@RequestParam String tipo) throws IOException {
+        return reporteService.generaReporte("ventas", null, tipo);
+    }
+    
+    @GetMapping("/ventasTotales")
+    public ResponseEntity<Resource> ventasTotales(@RequestParam String tipo) throws IOException {
+        return reporteService.generaReporte("VentasTotales2", null, tipo);
     }
 }
