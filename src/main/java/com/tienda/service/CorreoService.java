@@ -11,9 +11,11 @@ import jakarta.mail.MessagingException;
  * @author Genn
  */
 public interface CorreoService {
+    
     public void enviarCorreoHtml(
             String para,
-            String asunto,
-            String contenidoHtml) 
+            String asunto, 
+            String contenidoHtml)
             throws MessagingException;
+           
 }
